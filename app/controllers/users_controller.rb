@@ -14,10 +14,8 @@ class UsersController < ApplicationController
     render json: res.uniq
 	end
 
-
-
 	def index
-		@user = User.order('created_at DESC').limit(3)
+		@user = User.order('created_at DESC').page(params[:page])
 		render json: @user
 	end
 

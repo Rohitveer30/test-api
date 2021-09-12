@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   scope '/api', format: :json do
-    get 'users', to: 'users#index'
+    get 'users/:page', to: 'users#index'
     get '/user/:id', to: 'users#show'
     delete 'user/:id', to: 'users#delete'
     put 'user/:id', to: 'users#update'
